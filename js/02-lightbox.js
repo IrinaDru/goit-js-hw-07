@@ -21,9 +21,9 @@ function createGalleryCardsMarkup(galleryItems) {
     return galleryItems.map(({ preview, description, original }) => {
 return `
 <a class="gallery__item" 
-href="${preview}">
+href="${original}">
 <img class="gallery__image" 
-src="${original}" 
+src="${preview}" 
 alt="${description}" />
 </a>
     `;
@@ -43,7 +43,7 @@ function onImgContainerClick (evt) {
 
 const imageUrl = evt.target.getAttribute('src');
 const instance = basicLightbox.create(`
-<img src="${imageUrl}" width="1800" height="600">
+<img src="${imageUrl}" width="800" height="600">
 `);
 instance.show();
 }
